@@ -1,0 +1,23 @@
+{
+  "name": "oxford",
+  "version": "1.0.0",
+  "description": "an oxford style debate app",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidpham5/oxford.git"
+  },
+  "author": "David Pham, Jared Saussy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidpham5/oxford/issues"
+  },
+  "homepage": "https://github.com/davidpham5/oxford#readme"
+}
