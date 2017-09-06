@@ -1,9 +1,3 @@
-console.log('starting notes.js');
-
-// module.exports.addNote = () => {
-//     console.log('add Note');
-//     return 'New note';
-// }
 const fs = require('fs');
 
 var fetchNotes = () => {
@@ -38,8 +32,7 @@ var addNote = (title, body) => {
 };
 
 var getAll = () => {
-	console.log('getting notes');
-	
+	return fetchNotes();
 };
 var getNotes = (title) => {
 	var notes = fetchNotes();
