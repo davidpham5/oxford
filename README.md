@@ -1,7 +1,8 @@
-# oxford
-oxford style debate app
+# Oxford
+A basic command line driven weather app using darksky api and google maps api.
 
-# Run Local Server
-`node server.js` 
-Open browser to localhost:8888
-Any saves, you have to close the server.js in your terminal (ctrl c) and relaunch it
+# Getting started
+- `npm install`
+- `bower install`
+- `node weather-app.js -a '<zipcode, city and state, or address'>`
+- for help: `node weathe-app.js -h`
