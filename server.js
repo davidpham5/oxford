@@ -8,7 +8,6 @@ var app = express(); // creates app
 
 // include support for paritals
 hbs.registerPartials(__dirname + '/views/partials');
-
 app.set('view engine', 'hbs');
 
 // this is how we register middleware
