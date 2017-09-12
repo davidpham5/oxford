@@ -1,6 +1,9 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+const port = process.env.PORT || 3000;
+
 var app = express(); // creates app
 
 // include support for paritals
@@ -33,10 +36,11 @@ hbs.registerHelper('caps', (text) => {
     return text.toUpperCase();
 })
 
-app.use( (req, res, next) => {
-    res.render('maintenance.hbs', {
-    });
-});
+// app.use( (req, res, next) => {
+//     res.render('maintenance.hbs', {
+//     });
+//     next();
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -71,6 +75,6 @@ app.get('/bad', (request, response) => {
     })
 })
 // bind our app to port in our lcoalhost
-app.listen(3000, () => {
-    console.log('Server is up on localhost:3000');
+app.listen(port, () => {
+    console.log(`Server is up on port: ${port}`);
 });
