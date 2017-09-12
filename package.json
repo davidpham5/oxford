@@ -1,29 +1,16 @@
 {
-  "name": "oxford",
+  "name": "server",
   "version": "1.0.0",
-  "description": "an oxford style debate app",
+  "description": "express server",
   "main": "index.js",
-  "dependencies": {
-    "axios": "^0.16.2",
-    "bower": "^1.8.0",
-    "install": "^0.10.1",
-    "lodash": "^4.17.4",
-    "nodemon": "^1.12.0",
-    "request": "^2.81.0",
-    "yargs": "^4.7.1"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/davidpham5/oxford.git"
-  },
-  "author": "David Pham, Jared Saussy",
+  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/davidpham5/oxford/issues"
-  },
-  "homepage": "https://github.com/davidpham5/oxford#readme"
+  "dependencies": {
+    "express": "^4.15.4",
+    "hbs": "^4.0.1"
+  }
 }
