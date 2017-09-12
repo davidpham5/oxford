@@ -34,6 +34,7 @@ hbs.registerHelper('getCurrentYear', () => {
 
 hbs.registerHelper('caps', (text) => {
     return text.toUpperCase();
+    
 })
 
 // app.use( (req, res, next) => {
