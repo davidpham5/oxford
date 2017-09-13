@@ -35,11 +35,13 @@ axios.get(geocodeURL).then( (response) => {
 	
 	return axios.get(weatherURL);
 }).then( (response) => {
-	console.log(response.data.currently);
+	//console.log(response.data);
 	var temperature = response.data.currently.temperature;
+	var summary = response.data.currently.summary;
+	var hourlySummary = response.data.hourly.summary;
 	var apparentTemperature = response.data.currently.apparentTemperature;
 	
-	console.log(`It's currently ${temperature}. It feels like ${apparentTemperature}`)
+	console.log(`It's currently ${temperature} ${summary}. It feels like ${apparentTemperature}. ${hourlySummary}`)
 }).catch((error) => {
 	if (error.code === 'ENOTFOUND') {
 		console.log('Unable to connect to google maps api');
