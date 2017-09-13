@@ -25,6 +25,7 @@ app.use( (req, res, next) => {
     next();
 });
 
+
 // replace currentYear in our routes render object with a helper function
 hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
