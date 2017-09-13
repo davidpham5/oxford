@@ -68,6 +68,12 @@ app.get('/about', (request, response) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
+    })
+})
+
 app.get('/bad', (request, response) => {
     response.send({
         error: 'Error 404'
