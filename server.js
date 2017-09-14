@@ -54,10 +54,11 @@ app.get('/', (request, response) => {
     //     wife: 'sara',
     //     love: ['family', 'wife', 'dog']
     // })
+    response.send('hello world');
     response.render('home.hbs', {
         pageTitle: 'Home',
         greetings: 'Welcome'
-    })
+    });
 });
 // app.get('/about', (request, response) => {
 //     response.send('About Page')
@@ -84,3 +85,5 @@ app.get('/bad', (request, response) => {
 app.listen(port, () => {
     console.log(`Server is up on port: ${port}`);
 });
+
+module.exports.app = app;
