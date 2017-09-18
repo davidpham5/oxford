@@ -3,8 +3,7 @@
   "description": "an oxford style debate app",
   "main": "index.js",
   "authors": [
-    "David Pham",
-    "Jared Saussy"
+    "David Pham"
   ],
   "license": "MIT",
   "homepage": "https://github.com/davidpham5/oxford",
