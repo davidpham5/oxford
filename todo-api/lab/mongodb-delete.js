@@ -37,11 +37,11 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     //     console.log('result: ', JSON.stringify(result, undefined, 2));
     // });
 
-    db.collection('Users').deleteOne({
-            name: 'Leo'
-        }).then( (result) => {
-            console.log('result: ', JSON.stringify(result, undefined, 2));
-        });
-    db.close();
+    // db.collection('Users').deleteOne({
+    //         name: 'Leo'
+    //     }).then( (result) => {
+    //         console.log('result: ', JSON.stringify(result, undefined, 2));
+    //     });
+    // db.close();
 });
 
