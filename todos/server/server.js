@@ -55,7 +55,7 @@ app.get('/todos/:id', (req, resp) => {
                 resp.status(404).send();
                 return console.log('Todo does not exist'); 
             } else {
-                console.log('todo by id', todo);
+                console.log('todo by id', JSON.stringify(todo, undefined, 2));
                 resp.send({todo: todo});
             }
         }).catch((error) => {
