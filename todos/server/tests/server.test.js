@@ -1,6 +1,6 @@
 const expect = require('expect');
 const request = require('supertest');
-
+const {ObjectID} = require('mongodb');
 const {app} = require('./../server');
 const {Todo} = require('./../models/todos');
 
@@ -8,10 +8,13 @@ const {Todo} = require('./../models/todos');
 // only need the text property because
 // mongoose db will ppoulate the rest
 const todos = [
+
     {
+        _id: new ObjectID(),
         text: 'test todo text'
     },
     {
+        _id: new ObjectID(),
         text: 'test todo text again'
     }
 ]
@@ -89,6 +92,32 @@ describe('GET /todos', () => {
             .expect((resp) => {
                 expect((resp.body.todos).length).toBe(2);
             })
+            .end(done);
+    })
+})
+
+describe('GET /todos/:id', () => {
+    it('should return todo by id', (done) => {
+        request(app)
+        .get(`/todos/${todos[0]._id.toHexString()}`)
+        .expect(200)
+        .expect((resp) => {
+            expect(resp.body.todo.text).toBe(todos[0].text)
+        })
+        .end(done);
+    })
+    it('should return 404 if todo is not found', (done) => {
+        var id = new ObjectID();
+        request(app)
+            .get(`/todos/${id.toHexString()}`)
+            .expect(404)
+            .end(done);
+    });
+    it('should return 404 for non-object ids', (done) => {
+        var id = 123;
+        request(app)
+            .get(`/todos/${id}`)
+            .expect(404)
             .end(done);
     })
 })

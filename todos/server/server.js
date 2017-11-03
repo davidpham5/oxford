@@ -53,7 +53,7 @@ app.get('/todos/:id', (req, resp) => {
         Todo.findById(id).then((todo) => {
             if (!todo) {
                 resp.status(404).send();
-                return console.log('id does not exist'); 
+                return console.log('Todo does not exist'); 
             } else {
                 console.log('todo by id', todo);
                 resp.send({todo: todo});
