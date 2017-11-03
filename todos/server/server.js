@@ -7,6 +7,7 @@ var {Todo} = require('./models/todos');
 var {User} = require('./models/users');
 
 var app = express();
+var port = process.env.PORT || 3000;
 
 // use middleware
 app.use(bodyParser.json());
@@ -42,7 +43,7 @@ app.get('/todos/:id', (req, resp) => {
     // resp.send(req.params);
 
     var id = req.params.id;
-
+    console.log('id: ', id);
     if (!ObjectID.isValid(id)) {
         console.log('ID is not valid');
         // respond with a 404
@@ -65,8 +66,9 @@ app.get('/todos/:id', (req, resp) => {
     }
 });
 
-app.listen(3000, function() {
-    console.log('App listening on port 3000!');
+app.listen(port, function() {
+    //console.log('App listening on port 3000!');
+    console.log(`started up at port ${port}`);
 });
 
 module.exports = {
@@ -85,6 +87,7 @@ module.exports = {
 // });
 
 // var todo2 = new Todo({
+//     _id: new ObjectID(),
 //     text: 'cuddle with Sara',
 //     completed: true,
 //     completedAt: 2
