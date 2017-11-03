@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+const {ObjectID} = require('mongodb');
 
 var {mongoose} = require('./db/mongoose');
 var {Todo} = require('./models/todos');
@@ -32,6 +33,36 @@ app.get('/todos', (req, resp) => {
     }, (error) => {
         resp.status(400).send(error);
     })
+});
+
+// GET request /todos/:id
+app.get('/todos/:id', (req, resp) => {
+    // run server.js
+    // in postman GET locahost:3000/todos/123
+    // resp.send(req.params);
+
+    var id = req.params.id;
+
+    if (!ObjectID.isValid(id)) {
+        console.log('ID is not valid');
+        // respond with a 404
+        return resp.status(404).send();
+    } else {
+        // findById
+        // success
+        Todo.findById(id).then((todo) => {
+            if (!todo) {
+                resp.status(404).send();
+                return console.log('id does not exist'); 
+            } else {
+                console.log('todo by id', todo);
+                resp.send({todo: todo});
+            }
+        }).catch((error) => {
+             // error
+            resp.status(400).send();
+        })
+    }
 });
 
 app.listen(3000, function() {
